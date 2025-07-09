@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      background: #f5f5f5;
       color: #222;
     }
     header {
@@ -59,7 +59,7 @@
     }
     .container {
       padding: 2rem;
-      max-width: 960px;
+      max-width: 1200px;
       margin: auto;
     }
     section {
@@ -118,6 +118,20 @@
     .share button:hover {
       background-color: #bf360c;
     }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .photo-grid img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .photo-grid p {
+      font-size: 0.85rem;
+      color: #444;
+      margin: 0.5rem 0 1rem;
+    }
   </style>
 </head>
 <body>
@@ -136,68 +150,24 @@
 
   <div class="container">
     <section id="home" data-aos="fade-up">
-      <h2>Welcome</h2>
-      <p><strong>Mumbai</strong> is a city of dreams — but the reality for its 20 million residents often tells a different story.
-        This platform highlights systemic issues in governance and infrastructure, especially those handled by the <strong>BMC (Brihanmumbai Municipal Corporation)</strong>.</p>
-      <p>We back our claims with verified data, on-ground stories, and credible reporting to raise awareness and drive accountability.</p>
-    </section>
-
-    <section id="issues" data-aos="fade-up">
-      <h2>Issues</h2>
-      <ul>
-        <li><strong>Poor Road Quality:</strong> Over 27,000 potholes were filled in 2023 alone — yet the roads remain treacherous.</li>
-        <li><strong>Garbage Management:</strong> Overflowing bins, unsegregated waste, and illegal dumping persist in several wards.</li>
-        <li><strong>Flooding:</strong> Areas like Hindmata, Sion, and Chembur face waterlogging every monsoon due to drainage failure.</li>
-        <li><strong>Corruption & Contracts:</strong> Inflated project costs and irregularities plague civic tenders.</li>
-        <li><strong>Public Health:</strong> Shortage of functioning toilets, hospital bed scams, and outbreaks due to sanitation lapses.</li>
-      </ul>
-    </section>
-
-    <section id="cases" data-aos="fade-up">
-      <h2>Case Studies</h2>
-      <ul>
-        <li><strong>Dadar Floods (2023):</strong> In just 40 minutes, low-lying areas were submerged. Drainage systems were non-functional.</li>
-        <li><strong>Deonar Fire (2016):</strong> Toxic smoke from the landfill choked citizens for days — repeated fires went unaddressed.</li>
-        <li><strong>Elphinstone Stampede (2017):</strong> 23 lives lost due to years of delay in widening a narrow footbridge.</li>
-        <li><strong>RTI Exposé (2022):</strong> ₹6,000+ crore spent on roads, yet no clear audit trail was made available publicly.</li>
-      </ul>
-    </section>
-
-    <section data-aos="fade-up">
-      <h2>Watch: Reality on the Ground</h2>
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section data-aos="fade-up">
-      <h2>Live Updates from the Ground</h2>
-      <a class="twitter-timeline" data-height="400" href="https://twitter.com/MyBMCWatch?ref_src=twsrc%5Etfw">Tweets by MyBMCWatch</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </section>
-
-    <section id="sources" data-aos="fade-up">
-      <h2>Sources</h2>
-      <ul>
-        <li><a href="https://mumbaimirror.indiatimes.com" target="_blank">Mumbai Mirror archives</a></li>
-        <li><a href="https://prsindia.org" target="_blank">PRS India – Urban Governance</a></li>
-        <li><a href="https://transparency.org" target="_blank">Transparency International – India</a></li>
-        <li><a href="https://mumbaicity.gov.in" target="_blank">Official BMC Website</a></li>
-        <li><a href="https://rti.gov.in" target="_blank">RTI India Portal</a></li>
-      </ul>
-    </section>
-
-    <section id="action" data-aos="fade-up">
-      <h2>Take Action</h2>
-      <p>You can make a difference by:</p>
-      <ul>
-        <li><a href="https://rtionline.gov.in/" target="_blank">Filing an RTI</a> to demand transparency from BMC.</li>
-        <li><a href="https://portal.mcgm.gov.in" target="_blank">Reporting issues on the BMC complaint portal</a>.</li>
-        <li>Tagging officials on social media with photo/video documentation.</li>
-        <li>Collaborating with civic groups to push for policy change.</li>
-      </ul>
-
-      <div class="share">
-        <p>Help spread the message:</p>
-        <button onclick="copyLink()">Copy Page Link</button>
+      <h2>What Mumbai Really Looks Like</h2>
+      <div class="photo-grid">
+        <div>
+          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/347645520_635065588605293_7826365577480569825_n.jpg" alt="Pothole flooded street">
+          <p>Massive crater in Western suburbs — Source: @gemsofbmc</p>
+        </div>
+        <div>
+          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/370619265_696453925779155_4584348284909251450_n.jpg" alt="Collapsed road">
+          <p>Collapsed road slab in Ghatkopar — Source: @gemsofbmc</p>
+        </div>
+        <div>
+          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/363997892_1273802410263846_7823469773420835674_n.jpg" alt="Monsoon pothole chaos">
+          <p>Cars stranded during monsoon near Milan Subway — Source: @gemsofbmc</p>
+        </div>
+        <div>
+          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/382351925_865674461611722_8811668882632372020_n.jpg" alt="Neglected road">
+          <p>Deep pothole near Kandivali Station — Source: @gemsofbmc</p>
+        </div>
       </div>
     </section>
   </div>
