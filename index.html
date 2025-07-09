@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mumbai Unmasked</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -14,17 +14,38 @@
       color: #222;
     }
     header {
-      background: linear-gradient(135deg, #ff6f00, #ff9100);
+      background: url('https://images.unsplash.com/photo-1600841079764-91f956d4c10c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
-      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 6rem 1rem;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
     }
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      background-color: #222;
+      background-color: #111;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     nav a {
@@ -34,29 +55,34 @@
       transition: background 0.3s;
     }
     nav a:hover {
-      background-color: #444;
+      background-color: #333;
     }
     .container {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
     }
     section {
       margin-top: 3rem;
       background: white;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    section:hover {
+      transform: translateY(-4px);
     }
     h2 {
       color: #ff6f00;
       margin-bottom: 1rem;
     }
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
     li {
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
     a {
       color: #d84315;
@@ -65,12 +91,32 @@
       text-decoration: underline;
     }
     footer {
-      background-color: #eee;
+      background-color: #222;
+      color: white;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
       font-size: 0.9rem;
-      color: #555;
+    }
+    .share {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .share p {
+      margin-bottom: 0.5rem;
+    }
+    .share button {
+      background-color: #d84315;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .share button:hover {
+      background-color: #bf360c;
     }
   </style>
 </head>
@@ -89,14 +135,14 @@
   </nav>
 
   <div class="container">
-    <section id="home">
+    <section id="home" data-aos="fade-up">
       <h2>Welcome</h2>
       <p><strong>Mumbai</strong> is a city of dreams — but the reality for its 20 million residents often tells a different story.
         This platform highlights systemic issues in governance and infrastructure, especially those handled by the <strong>BMC (Brihanmumbai Municipal Corporation)</strong>.</p>
       <p>We back our claims with verified data, on-ground stories, and credible reporting to raise awareness and drive accountability.</p>
     </section>
 
-    <section id="issues">
+    <section id="issues" data-aos="fade-up">
       <h2>Issues</h2>
       <ul>
         <li><strong>Poor Road Quality:</strong> Over 27,000 potholes were filled in 2023 alone — yet the roads remain treacherous.</li>
@@ -107,7 +153,7 @@
       </ul>
     </section>
 
-    <section id="cases">
+    <section id="cases" data-aos="fade-up">
       <h2>Case Studies</h2>
       <ul>
         <li><strong>Dadar Floods (2023):</strong> In just 40 minutes, low-lying areas were submerged. Drainage systems were non-functional.</li>
@@ -117,7 +163,7 @@
       </ul>
     </section>
 
-    <section id="sources">
+    <section id="sources" data-aos="fade-up">
       <h2>Sources</h2>
       <ul>
         <li><a href="https://mumbaimirror.indiatimes.com" target="_blank">Mumbai Mirror archives</a></li>
@@ -128,7 +174,7 @@
       </ul>
     </section>
 
-    <section id="action">
+    <section id="action" data-aos="fade-up">
       <h2>Take Action</h2>
       <p>You can make a difference by:</p>
       <ul>
@@ -137,11 +183,29 @@
         <li>Tagging officials on social media with photo/video documentation.</li>
         <li>Collaborating with civic groups to push for policy change.</li>
       </ul>
+
+      <div class="share">
+        <p>Help spread the message:</p>
+        <button onclick="copyLink()">Copy Page Link</button>
+      </div>
     </section>
   </div>
 
   <footer>
     &copy; 2025 Mumbai Unmasked | Built by Citizens for Transparency
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Page link copied to clipboard!');
+      }, () => {
+        alert('Failed to copy link.');
+      });
+    }
+  </script>
 </body>
 </html>
